@@ -1,6 +1,6 @@
-cups-autoenable
+cups-autoenable and cups-autoclean
 ===============
-Script that looks for disabled cups printers and enables them.
+Script that looks for disabled cups printers and enables. And automatically clean the print queue.
 
 But How?
 ========
@@ -9,11 +9,11 @@ Install
 -------
 Put it somewhere, eg. /usr/local/bin/cups-autoenable
 
-Setup cron entry
+Setup cron entry every minute
 ----------------
 
 ```
-echo '* * * * * root /usr/local/bin/cups-autoenable' > /etc/cron.d/cups-autoenable
+echo '*/1 * * * * root /usr/local/bin/cups-autoenable' > /etc/cron.d/cups-autoenable
 ```
 
 
@@ -26,7 +26,7 @@ Yeah, it is.
 
 Author
 ======
-Tomas Edwardsson
+Tomas Edwardsson And Leonardo Soares
 
 
 License
