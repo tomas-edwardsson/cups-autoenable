@@ -22,6 +22,8 @@
 # You can put it in cron every minute or something where printers disable
 # automatically.
 
+logger -t "cups-cleaning-print-queue" "auto-cleaning"
+cancel -a
 
 for printer in $(lpstat -p|grep disabled|awk '{print $2}')
 do
