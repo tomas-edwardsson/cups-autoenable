@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2013, Tomas Edwardsson 
+# Copyright 2013, Tomas Edwardsson and Leonardo Soares
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 
 
 # This script looks for disabled cups printers and automaticly
-# enables them if disabled.
+# enables them if disabled, It also clears the print queue of printers with a problem.
 
 # You can put it in cron every minute or something where printers disable
 # automatically.
@@ -27,5 +27,8 @@ for printer in $(lpstat -p|grep disabled|awk '{print $2}')
 do
 	logger -t "cups-autoenable" "Printer ${printer} is disabled, auto-enabling"
 	cupsenable ${printer}
+	
+	logger -t "cups-cleaning-print-queue" "auto-cleaning"
+	cancel -a ${printer}
 done
 
