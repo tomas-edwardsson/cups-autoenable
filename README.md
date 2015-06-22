@@ -1,6 +1,6 @@
 cups-autoenable
 ===============
-Script that looks for disabled cups printers and enables them.
+Script that looks for disabled cups printers and enables them. And automatically clean the print queue.
 
 But How?
 ========
@@ -26,7 +26,7 @@ Yeah, it is.
 
 Author
 ======
-Tomas Edwardsson
+Tomas Edwardsson and Leonardo Soares
 
 
 License
