@@ -7,7 +7,7 @@ But How?
 
 Install
 -------
-Put it somewhere, eg. /usr/local/bin/cups-autoenable
+Put it somewhere, eg. /usr/local/bin/cups-autoenable.sh
 
 Setup cron entry which will run every minute.
 ----------------
